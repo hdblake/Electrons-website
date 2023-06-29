@@ -1,0 +1,23 @@
+:root {
+  /* colors */
+  --main-color: #1A71BD;
+  --secondary-color: #FFDC00;
+  --accent-color-1: #ffffff;
+
+  /* fonts */
+  --font-headers: Goldman, sans-serif;
+  --font-text: DM Sans, sans-serif;
+  --font-base: 18px;
+  --small-font: .8em;
+  --large-font: 1.2em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--accent-color-1);
+  margin: 0;
+  font-size: var(--font-base);
+}
