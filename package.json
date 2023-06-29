@@ -8,7 +8,8 @@
     "lint": "eslint *.{js,jsx} src/**/*.{js,jsx}",
     "preview": "vite preview",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css,jsx}\"",
-    "test": "jest"
+    "test": "jest",
+    "tw:build": "tailwindcss -i ./src/styles/index.css -o ./dist/output.css --watch"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -26,6 +27,7 @@
     "eslint-plugin-react-refresh": "^0.4.1",
     "jest": "^29.5.0",
     "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
   },
   "eslintConfig": {
