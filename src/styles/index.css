@@ -4,15 +4,15 @@
 
 :root {
   /* colors */
-  --main-color: #1A71BD;
-  --secondary-color: #FFDC00;
+  --main-color: #1a71bd;
+  --secondary-color: #ffdc00;
   --accent-color-1: #ffffff;
 
   /* fonts */
   --font-headers: Goldman, sans-serif;
   --font-text: DM Sans, sans-serif;
   --font-base: 18px;
-  --small-font: .8em;
+  --small-font: 0.8em;
   --large-font: 1.2em;
 }
 
