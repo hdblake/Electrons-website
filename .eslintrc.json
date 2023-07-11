@@ -16,6 +16,11 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "settings": {
+    "react": {
+      "version": "18.2"
+    }
+  },
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
@@ -25,7 +30,7 @@
         "argsIgnorePattern": "res|next|^err"
       }
     ],
-    "arrow-body-style": [3, "always"],
+    "arrow-body-style": [2, "as-needed"],
     "no-param-reassign": [
       2,
       {
