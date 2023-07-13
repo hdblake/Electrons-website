@@ -50,7 +50,7 @@
     "consistent-return": 0,
     "radix": 0,
     "no-shadow": [
-      2,
+      0,
       {
         "hoist": "all",
         "allow": ["resolve", "reject", "done", "next", "err", "error"]
