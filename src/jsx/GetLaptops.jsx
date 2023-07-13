@@ -1,33 +1,23 @@
-import { useState, useEffect } from "react";
+import GetProducts from "./GetProducts.jsx";
 
 export default function GetLaptops() {
-  const [data, setData] = useState([]);
-
-  const fetchLaptops = async () => {
-    const response = await fetch(
-      "https://dummyjson.com/products/category/laptops"
-    );
-    if (response.ok) {
-      return response
-        .json()
-        .then((data) => {
-          setData(data.products);
-          console.log(data);
-        })
-        .catch((err) => console.log(err));
-    }
-  };
-
-  useEffect(() => {
-    fetchLaptops();
-  }, []);
+  const [products] = GetProducts(
+    "https://dummyjson.com/products/category/laptops",
+  );
 
   return (
     <>
       <h1>Laptops</h1>
-      {data.map((data) => (
-        <p key={data.id}>{data.title}</p>
-      ))}
+      {products &&
+        products.map((product) => (
+          <div key={product.id}>
+            <img src={product.thumbnail} alt={"Image of" + product.title} />
+            <p>
+              {product.brand} {product.title}
+            </p>
+            <p>Price: ${product.price}</p>
+          </div>
+        ))}
     </>
   );
 }
