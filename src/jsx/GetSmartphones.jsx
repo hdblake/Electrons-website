@@ -1,7 +1,7 @@
-import GetProducts from "./GetProducts.jsx";
+import Products from "./Products.jsx";
 
 export default function GetSmartphones() {
-  const [products] = GetProducts(
+  const [products] = Products(
     "https://dummyjson.com/products/category/smartphones",
   );
 

@@ -1,7 +1,7 @@
-import GetProducts from "./GetProducts.jsx";
+import Products from "./Products.jsx";
 
 export default function GetLaptops() {
-  const [products] = GetProducts(
+  const [products] = Products(
     "https://dummyjson.com/products/category/laptops",
   );
 
