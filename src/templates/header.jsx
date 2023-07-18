@@ -1,10 +1,11 @@
 import mainLogo from "../images/electrons-main-logo.webp";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <>
       <div className="logo">
-        <a href="../index.html">
+        <Link to="/">
           <img
             src={mainLogo}
             className="logo"
@@ -12,7 +13,7 @@ export default function Header() {
             width="275"
             height="39"
           />
-        </a>
+        </Link>
       </div>
       <div className="cart"></div>
     </>
