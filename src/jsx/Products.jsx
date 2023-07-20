@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import PropTypes from "prop-types";
 import useLocalStorageState from "use-local-storage-state";
 
-function Products() {
+export default function Products() {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
   const [cart, setCart] = useLocalStorageState("cart", { defaultValue: [] });
@@ -67,11 +66,3 @@ function Products() {
     </>
   );
 }
-
-Products.propTypes = {
-  product: PropTypes.object,
-  handleAddToCart: PropTypes.func,
-  addToCart: () => {},
-};
-
-export default Products;
