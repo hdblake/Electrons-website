@@ -9,5 +9,8 @@ export default {
     },
     extend: {},
   },
+  variants: {
+    opacity: ({ after }) => after(["disabled"]),
+  },
   plugins: [],
 };
