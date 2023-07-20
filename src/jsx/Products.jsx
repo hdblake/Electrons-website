@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
+import useLocalStorageState from "use-local-storage-state";
 
-export default function GetProducts() {
+function Products() {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
+  const [cart, setCart] = useLocalStorageState("cart", { defaultValue: [] });
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/category/${category}`)
@@ -13,6 +16,18 @@ export default function GetProducts() {
 
   let categoryCapitalized =
     category.charAt(0).toUpperCase() + category.slice(1);
+
+  const addToCart = (product) => {
+    product.quantity = 1;
+
+    setCart((prevCart) => ({
+      ...prevCart,
+      [product.id]: product,
+    }));
+  };
+
+  const isInCart = (productId) =>
+    Object.keys(cart || {}).includes(productId.toString());
 
   return (
     <>
@@ -39,8 +54,10 @@ export default function GetProducts() {
               </p>
               <button
                 id="addToCart"
-                data-id=""
-                className="bg-main py-3 px-5 text-secondary font-bold rounded-lg"
+                name="Add to Cart"
+                className="bg-main py-3 px-5 text-secondary font-bold rounded-lg disabled:opacity-50"
+                disabled={isInCart(product.id)}
+                onClick={() => addToCart(product)}
               >
                 Add to Cart
               </button>
@@ -50,3 +67,11 @@ export default function GetProducts() {
     </>
   );
 }
+
+Products.propTypes = {
+  product: PropTypes.object,
+  handleAddToCart: PropTypes.func,
+  addToCart: () => {},
+};
+
+export default Products;
