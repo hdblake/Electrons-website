@@ -17,12 +17,14 @@ export default function Header() {
         </Link>
       </div>
       <div className="cart">
-        <ShoppingCartSharpIcon
-          className="text-main"
-          style={{
-            fontSize: "32px",
-          }}
-        />
+        <Link to="/cart">
+          <ShoppingCartSharpIcon
+            className="text-main"
+            style={{
+              fontSize: "32px",
+            }}
+          />
+        </Link>
       </div>
     </div>
   );
